@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ConfiguredSMSClient1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>Servlet for Receiving Inbound Messages as JSON</description>
+    <display-name>JSONServlet</display-name>
+    <servlet-name>JSONServlet</servlet-name>
+    <servlet-class>com.kony.service.JSONServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JSONServlet</servlet-name>
+    <url-pattern>/receiver/json</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Servlet for Receiving Inbound Messages as XML</description>
+    <display-name>XMLServlet</display-name>
+    <servlet-name>XMLServlet</servlet-name>
+    <servlet-class>com.kony.service.XMLServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XMLServlet</servlet-name>
+    <url-pattern>/receiver/xml</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Servlet for Receiving Inbound Messages as Key Params</description>
+    <display-name>KeyParamServlet</display-name>
+    <servlet-name>KeyParamServlet</servlet-name>
+    <servlet-class>com.kony.service.KeyParamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KeyParamServlet</servlet-name>
+    <url-pattern>/receiver/keys</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Servlet for Receiving Inbound Messages as Get Params</description>
+    <display-name>GetParamServlet</display-name>
+    <servlet-name>GetParamServlet</servlet-name>
+    <servlet-class>com.kony.service.GetParamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetParamServlet</servlet-name>
+    <url-pattern>/receiver/get</url-pattern>
+  </servlet-mapping>
+</web-app>
